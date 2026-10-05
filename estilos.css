@@ -1,0 +1,516 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+
+/* ENCABEZADO */
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 35px;
+}
+
+header button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* CONTENIDO */
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+
+/* BUSCADOR */
+
+.busqueda {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#buscador {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+
+/* CATEGORÍAS */
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+}
+
+.categorias button {
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #222;
+    color: white;
+
+    cursor: pointer;
+}
+
+.categorias button:hover {
+    background-color: #444;
+}
+
+
+/* PRODUCTOS */
+
+.productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+
+.producto {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 10px #0002;
+
+    transition: transform 0.2s;
+}
+
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+
+/* IMAGEN */
+
+.imagen {
+    font-size: 70px;
+
+    background-color: #eee;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+/* PRECIO */
+
+.producto strong {
+    display: block;
+
+    font-size: 22px;
+
+    margin: 15px;
+}
+
+
+/* BOTÓN */
+
+.producto button {
+    background-color: #222;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #444;
+}
+
+
+/* CARRITO */
+
+.carrito {
+    margin-top: 40px;
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+
+/* PIE DE PÁGINA */
+
+footer {
+    margin-top: 50px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #222;
+
+    color: white;
+}
+/* =========================
+   CARRITO LATERAL
+========================= */
+
+.fondo-carrito {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 10;
+}
+
+
+.fondo-carrito.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* PANEL */
+
+.carrito-lateral {
+
+    position: fixed;
+
+    top: 0;
+    right: -400px;
+
+    width: 380px;
+    max-width: 90%;
+
+    height: 100%;
+
+    background: white;
+
+    z-index: 20;
+
+    box-shadow: -5px 0 20px #0003;
+
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.carrito-lateral.activo {
+    right: 0;
+}
+
+
+/* ENCABEZADO */
+
+.carrito-header {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.carrito-header h2 {
+    margin: 0;
+}
+
+
+.cerrar {
+
+    border: none;
+
+    background: #eee;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* PRODUCTOS DEL CARRITO */
+
+.lista-carrito {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+}
+
+
+.lista-carrito p {
+
+    padding: 10px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.lista-carrito button {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* PIE */
+
+.carrito-footer {
+
+    padding: 20px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.carrito-footer h3 {
+
+    font-size: 22px;
+
+    margin-top: 0;
+}
+
+
+/* FINALIZAR */
+
+.finalizar {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+.finalizar:hover {
+
+    background: #444;
+
+}
+/* =========================
+   FORMULARIO DE COMPRA
+========================= */
+
+.ventana-compra {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 30;
+
+    padding: 20px;
+}
+
+
+.ventana-compra.activo {
+    display: flex;
+}
+
+
+.formulario {
+
+    background: white;
+
+    width: 450px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    box-shadow: 0 10px 30px #0005;
+}
+
+
+.formulario h2 {
+
+    margin-top: 0;
+
+    font-size: 25px;
+}
+
+
+.formulario label {
+
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+
+.formulario input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+.cerrar-formulario {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+
+    background: #eee;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+#resumenPedido {
+
+    background: #f5f5f5;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+.boton-enviar {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+.boton-enviar:hover {
+
+    background: #444;
+
+}

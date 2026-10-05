@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Tienda</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Roma personalizados</h1>
+
+        <p>Productos de calidad al mejor precio</p>
+
+        <button id="botonCarrito">
+            🛒 Carrito (<span id="contador">0</span>)
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- BUSCADOR -->
+
+        <section class="busqueda">
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="🔎 Buscar productos..."
+            >
+
+        </section>
+
+
+        <!-- CATEGORÍAS -->
+
+        <section class="categorias">
+
+            <button onclick="filtrarCategoria('todos')">
+                Todos
+            </button>
+
+            <button onclick="filtrarCategoria('ropa')">
+                👕 Ropa
+            </button>
+
+            <button onclick="filtrarCategoria('calzado')">
+                👟 Calzado
+            </button>
+
+            <button onclick="filtrarCategoria('electronica')">
+                🎧 Electrónica
+            </button>
+
+            <button onclick="filtrarCategoria('accesorios')">
+                ⌚ Accesorios
+            </button>
+
+        </section>
+
+
+        <!-- PRODUCTOS -->
+
+        <section class="productos" id="productos">
+
+
+            <div class="producto" data-categoria="ropa">
+
+                <div class="imagen">
+                    👕
+                </div>
+
+                <h2>Remera básica</h2>
+
+                <p>Remera de algodón</p>
+
+                <strong>$15.000</strong>
+
+                <button onclick="agregarAlCarrito('Remera básica', 15000)">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto" data-categoria="calzado">
+
+                <div class="imagen">
+                    👟
+                </div>
+
+                <h2>Zapatillas</h2>
+
+                <p>Zapatillas urbanas</p>
+
+                <strong>$45.000</strong>
+
+                <button onclick="agregarAlCarrito('Zapatillas', 45000)">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto" data-categoria="electronica">
+
+                <div class="imagen">
+                    🎧
+                </div>
+
+                <h2>Auriculares</h2>
+
+                <p>Auriculares inalámbricos</p>
+
+                <strong>$25.000</strong>
+
+                <button onclick="agregarAlCarrito('Auriculares', 25000)">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+            <div class="producto" data-categoria="accesorios">
+
+                <div class="imagen">
+                    ⌚
+                </div>
+
+                <h2>Reloj</h2>
+
+                <p>Reloj digital</p>
+
+                <strong>$30.000</strong>
+
+                <button onclick="agregarAlCarrito('Reloj', 30000)">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+
+        </section>
+
+<!-- CARRITO LATERAL -->
+
+<div id="fondoCarrito" class="fondo-carrito"></div>
+
+<aside id="carritoLateral" class="carrito-lateral">
+
+    <div class="carrito-header">
+
+        <h2>🛒 Mi carrito</h2>
+
+        <button id="cerrarCarrito" class="cerrar">
+            ✕
+        </button>
+
+    </div>
+
+    <div id="listaCarrito" class="lista-carrito">
+
+        <p>El carrito está vacío.</p>
+
+    </div>
+
+    <div class="carrito-footer">
+
+        <h3>
+            Total:
+            $<span id="total">0</span>
+        </h3>
+
+        <button class="finalizar">
+            Finalizar compra
+        </button>
+
+    </div>
+
+</aside>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 Mi Tienda</p>
+
+    </footer>
+    
+<!-- FORMULARIO DE COMPRA -->
+
+<div id="ventanaCompra" class="ventana-compra">
+
+    <div class="formulario">
+
+        <button id="cerrarCompra" class="cerrar-formulario">
+            ✕
+        </button>
+
+        <h2>🛍️ Finalizar compra</h2>
+
+        <p>Completá tus datos para realizar el pedido.</p>
+
+        <label for="nombreCliente">
+            Nombre
+        </label>
+
+        <input
+            type="text"
+            id="nombreCliente"
+            placeholder="Tu nombre"
+        >
+
+
+        <label for="telefonoCliente">
+            Teléfono
+        </label>
+
+        <input
+            type="tel"
+            id="telefonoCliente"
+            placeholder="Tu número de teléfono"
+        >
+
+
+        <label for="direccionCliente">
+            Dirección
+        </label>
+
+        <input
+            type="text"
+            id="direccionCliente"
+            placeholder="Dirección de entrega"
+        >
+
+
+        <h3>Resumen del pedido</h3>
+
+        <div id="resumenPedido">
+        </div>
+
+
+        <button
+            id="enviarPedido"
+            class="boton-enviar"
+        >
+            📱 Enviar pedido
+        </button>
+
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
